@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "ROI Pointer Math",
+      "setup": "python -m pip install --upgrade pip && pip install --upgrade platformio",
+      "run": "pio test -e native",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 100
+    }
+  ]
+}
