@@ -1,3 +1,10 @@
+#ifdef ARDUINO
+#include <Arduino.h>
+#else
+#include <unistd.h>
+#define delay(ms) usleep(ms * 1000)
+#endif
+
 #include <unity.h>
 #include "roi_math.h"
 
@@ -48,8 +55,7 @@ void test_roi_boundary() {
     TEST_ASSERT_EQUAL_PTR(expected_ptr, ptr);
 }
 
-void setup() {
-    delay(2000); // Wait for serial monitor
+void run_tests() {
     UNITY_BEGIN();
     RUN_TEST(test_roi_origin);
     RUN_TEST(test_roi_offset_rgb565);
@@ -57,6 +63,18 @@ void setup() {
     UNITY_END();
 }
 
-void loop() {
-    // Nothing to do
+#ifdef ARDUINO
+void setup() {
+    delay(2000); // Wait for serial monitor
+    run_tests();
 }
+
+void loop() {
+    delay(1000);
+}
+#else
+int main(int argc, char **argv) {
+    run_tests();
+    return 0;
+}
+#endif
