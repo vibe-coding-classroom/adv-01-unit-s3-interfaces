@@ -1,5 +1,3 @@
-Viewed adv-01-unit-s3-interfaces.html:1-407
-
 針對 **`adv-01-unit-s3-interfaces` (ESP32-S3 感測器介面與 PSRAM)** 單元，這是一個深入探討「硬體資源調度」與「底層記憶體管理」的課程，是實施邊緣 AI 運算的物理基礎。
 
 以下是在 **GitHub Classroom** 部署其作業 (Assignments) 的具體建議：
