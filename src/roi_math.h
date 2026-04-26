@@ -25,7 +25,7 @@ typedef struct {
 inline uint8_t* get_pixel_ptr(ImageBuffer* img, uint16_t x, uint16_t y) {
     // TASK 2: Implement pointer arithmetic here
     // Hint: address = base_address + (y * width + x) * bytes_per_pixel
-    return nullptr; // Placeholder
+    return img->data + (y * img->width + x) * img->bytes_per_pixel;
 }
 
 /**
